@@ -60,6 +60,11 @@
       "meteor/reactive-dict": [
         "/home/kane-thornwyrd/.meteor/packages/reactive-dict/1.3.2/web.browser/migration.js",
         "/home/kane-thornwyrd/.meteor/packages/reactive-dict/1.3.2/web.browser/reactive-dict.js"
+      ],
+      "meteor/accounts-password": [
+        "/home/kane-thornwyrd/.meteor/packages/accounts-password/3.0.2/web.browser/password_client.js",
+        "/home/kane-thornwyrd/.meteor/packages/accounts-password/3.0.2/web.browser/email_templates.js",
+        "/home/kane-thornwyrd/.meteor/packages/accounts-password/3.0.2/web.browser/password_server.js"
       ]
     }
   },

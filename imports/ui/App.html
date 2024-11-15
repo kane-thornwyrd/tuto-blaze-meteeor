@@ -7,12 +7,18 @@
           <header>
               <div class="app-bar">
                   <div class="app-header">
-                      <h1>📃 To Do List {{incompleteCount}}</h1>
+                      <h1>📃 To Do List <small>{{incompleteCount}}</small></h1>
                   </div>
               </div>
           </header>
   
           <div class="main">
+            {{#if isUserLogged}}
+              <div class="user">
+                <button id="logout">
+                  {{getUser.username}} <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
+                </button>
+              </div>
               {{> form }}
               <div class="filter">
                 <button id="hide-completed-button">
@@ -29,13 +35,16 @@
                       {{> task}}
                   {{/each}}
               </ul>
+            {{else}}
+              {{> login }}
+            {{/if}}
           </div>
       </div>
   </template>
 
 <template name="form">
     <form class="task-form">
-        <input type="text" name="text" placeholder="Type to add new tasks" />
+        <input type="text" name="text" placeholder="Type here to add new tasks" />
         <button type="submit">+</button>
     </form>
 </template>
