@@ -1,18 +1,40 @@
 import { Meteor } from 'meteor/meteor'
 import { Accounts } from 'meteor/accounts-base';
-import { TasksCollection } from '/imports/api/TasksCollection'
+import { TasksCollection } from '/imports/db/TasksCollection'
+import '/imports/api/tasksMethods'
 
-const SEED_USERNAME = 'meteorite';
-const SEED_PASSWORD = 'password';
+const SEED_USERNAME = 'meteorite'
+const SEED_PASSWORD = 'password'
 
 const SEED_DATA = [
-  {text: 'First Task'},
-  {text: 'Second Task'},
-  {text: 'Third Task'},
-  {text: 'Fourth Task'},
-  {text: 'Fifth Task'},
-  {text: 'Sixth Task'},
-  {text: 'Seventh Task'}
+  {
+    text: 'First Task',
+    isChecked: false,
+  },
+  {
+    text: 'Second Task',
+    isChecked: false,
+  },
+  {
+    text: 'Third Task',
+    isChecked: false,
+  },
+  {
+    text: 'Fourth Task',
+    isChecked: false,
+  },
+  {
+    text: 'Fifth Task',
+    isChecked: false,
+  },
+  {
+    text: 'Sixth Task',
+    isChecked: false,
+  },
+  {
+    text: 'Seventh Task',
+    isChecked: false,
+  }
 ]
 
 const insertTask = (content, userId) =>

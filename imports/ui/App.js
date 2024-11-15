@@ -1,7 +1,7 @@
 import { Template } from 'meteor/templating'
 import { ReactiveDict } from 'meteor/reactive-dict'
 
-import { TasksCollection } from '../api/TasksCollection'
+import { TasksCollection } from '/imports/db/TasksCollection'
 import './App.html'
 import './Task/Task.js'
 import './Login/Login.js'
@@ -75,11 +75,7 @@ Template.form.events({
     const target = event.target
     const text = target.text.value
 
-    TasksCollection.insert({
-      text,
-      userId: getUser()._id,
-      createdAt: new Date(),
-    })
+    Meteor.call('tasks.insert', {text})
 
     target.text.value = ''
   }

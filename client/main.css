@@ -61,12 +61,16 @@ button {
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
-  padding: 1rem 0.5rem;
+  padding: 1rem;
   border: 1px solid var(--palette-Surface2);
 }
 
 button:focus {
   outline: 0;
+}
+
+button:hover {
+  background-color: var(--palette-Surface2);
 }
 
 input {
@@ -121,11 +125,7 @@ input::placeholder {
 }
 
 .main > * {
-  margin: 1rem;
-}
-
-.main *:first-child {
-  margin-top: 0;
+  margin: 0 1rem 1rem 1rem;
 }
 
 .main *:last-child {
@@ -186,6 +186,7 @@ header {
 .task-form > input {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  border-right: none;
   flex-grow: 1;
   width: 100%;
 }
@@ -194,6 +195,7 @@ header {
   aspect-ratio: 1;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  border-left: none;
 }
 
 .tasks {
@@ -271,7 +273,6 @@ header {
 }
 .user button {
   display: flex;
-  font-weight: 300;
   padding: 0.2rem 0.5rem;
 }
 .user button:hover {
