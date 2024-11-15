@@ -1,8 +1,196 @@
+/** Catppuccin Macchiato **/
+:root {
+  --palette-Rosewater:  #f4dbd6;
+  --palette-Flamingo: #f0c6c6;
+  --palette-Pink: #f5bde6;
+  --palette-Mauve:  #c6a0f6;
+  --palette-Red:  #ed8796;
+  --palette-Maroon: #ee99a0;
+  --palette-Peach:  #f5a97f;
+  --palette-Yellow: #eed49f;
+  --palette-Green:  #a6da95;
+  --palette-Teal: #8bd5ca;
+  --palette-Sky:  #91d7e3;
+  --palette-Sapphire: #7dc4e4;
+  --palette-Blue: #8aadf4;
+  --palette-Lavender: #b7bdf8;
+  --palette-Text: #cad3f5;
+  --palette-Subtext1: #b8c0e0;
+  --palette-Subtext0: #a5adcb;
+  --palette-Overlay2: #939ab7;
+  --palette-Overlay1: #8087a2;
+  --palette-Overlay0: #6e738d;
+  --palette-Surface2: #5b6078;
+  --palette-Surface1: #494d64;
+  --palette-Surface0: #363a4f;
+  --palette-Base: #24273a;
+  --palette-Mantle: #1e2030;
+  --palette-Crust:  #181926;
+}
+
 body {
-  padding: 10px;
+  background-attachment: fixed;
+  background-color: var(--palette-Base);
+  bottom: 0;
+  color: var(--palette-Text);
   font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+button {
+  background-color: var(--palette-Surface0);
+  color: var(--palette-Text);
+  font-weight: 600;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 5px;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-header {
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.app-header > h1 {
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 100;
+}
+
+.main {
+  background: var(--palette-Base);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: auto;
+  margin-top: 1rem;
+}
+
+.main > * {
+  margin: 0 1rem 1rem 1rem;
+}
+
+.main::-webkit-scrollbar {
+  background: inherit;
+  height: 0;
+  width: 0;
+}
+.filter {
+  display: flex;
+  justify-content: center;
+}
+
+.filter button {
+  box-shadow: 0px 2px 4px var(--palette-Crust);
+}
+
+header {
+  background-image: linear-gradient(var(--palette-Base), var(--palette-Crust));
+  box-shadow: 0 2px 8px var(--palette-Crust);
+  padding: 20px 15px 15px 15px;
+  position: relative;
+}
+
+.app-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-bar h1 {
+  display: inline-block;
+  font-size: 1.5em;
+  margin-right: 1em;
+  margin: 0;
 }
 
 .task-form {
-  margin: 1rem 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 2px 4px var(--palette-Crust);
+}
+
+.task-form > input::placeholder {
+  color: var(--palette-Text);
+  font-weight: 300;
+}
+
+.task-form > input {
+  background: var(--palette-Crust);
+  border: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: var(--palette-Text);
+  flex-grow: 1;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 1rem 0.5rem;
+  width: 100%;
+}
+
+.task-form > input:focus {
+  outline: 0;
+}
+
+.task-form > button {
+  aspect-ratio: 1;
+}
+
+.tasks {
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+
+.tasks > li {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  box-shadow: 0px 2px 4px var(--palette-Crust);
+}
+
+
+.tasks > li > span {
+  flex-grow: 1;
+}
+
+.tasks > li > input[checked] + span {
+  text-decoration: line-through;
+  color: var(--palette-Green);
+}
+
+.tasks > li > button {
+  background-color: var(--palette-Red);
+  border: 0.25rem solid var(--palette-Red);
+  border-radius: 100%;
+  color: var(--palette-Crust);
+  font-size: 1rem;
+  font-weight: 500;
+  justify-self: flex-end;
+  width: 2.3rem;
+}
+
+.tasks > li > .delete:hover {
+  background-color: var(--palette-Maroon);
+  border-color: var(--palette-Rosewater);
 }

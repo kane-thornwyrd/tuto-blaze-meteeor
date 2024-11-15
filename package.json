@@ -9,10 +9,11 @@
     "visualize": "meteor --production --extra-packages bundle-visualizer"
   },
   "dependencies": {
-    "@babel/runtime": "^7.23.5",
-    "jquery": "^3.7.1",
-    "meteor-node-stubs": "^1.2.10",
-    "tailwindcss": "3.4.14"
+    "@babel/runtime": "7.26.0",
+    "jquery": "3.7.1",
+    "meteor": "3.0.4",
+    "meteor-node-stubs": "1.2.12",
+    "tailwindcss": "3.4.15"
   },
   "meteor": {
     "mainModule": {
